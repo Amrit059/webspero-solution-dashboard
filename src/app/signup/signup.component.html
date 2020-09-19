@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div style="text-align: center;">
+      <div style="margin: 50px;">
+        <h2>
+          {{title}}
+        </h2>
+      </div>
+      <form [formGroup]="signupForm">
+        <div>
+          <mat-form-field>
+            <input matInput name="name" formControlName="name" placeholder="Enter Name">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput name="phoneNo" formControlName="phoneNo" placeholder="Enter Phone Number">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput name="email" formControlName="email" placeholder="Enter Email" required>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput name="password" type="password" formControlName="password" placeholder="Enter Password"
+              required>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput name="mobileNo" formControlName="mobileNo" placeholder="Enter Mobile Number" required>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput name="zipCode" formControlName="zipCode" placeholder="Enter Zip Code" required>
+          </mat-form-field>
+        </div>
+        <div>
+          <!-- <mat-form-field>
+            <input matInput name="file" formControlName="file" type="file" (change)="onFileSelected($event)" placeholder="Enter Profile Pic URL">
+          </mat-form-field> -->
+        </div>
+        <span>
+          <button mat-raised-button type="submit" [disabled]=signupForm.invalid (click)="userSignup()"
+            color="primary">Sign Up</button>
+        </span>
+      </form>
+      <div>
+        <a class="nav-link" href="login">Already have an account? Login</a>
+      </div>
+    </div>
+  </div>
+</div>

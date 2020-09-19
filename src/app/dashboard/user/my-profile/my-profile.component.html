@@ -1,0 +1,51 @@
+<ng-template [ngIf]="userModel.name != undefined">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div style="text-align: center;">
+        <div style="margin: 50px;">
+          <h2>
+            {{title}}
+          </h2>
+        </div>
+        <form [formGroup]="myProfileForm">
+          <div>
+            <mat-form-field>
+              <input matInput name="name" formControlName="name" placeholder="Enter Name">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput name="phoneNo" formControlName="phoneNo" placeholder="Enter Phone Number">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput name="email" formControlName="email" placeholder="Enter Email" required>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput name="password" type="password" formControlName="password" placeholder="Enter Password"
+                required>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput name="mobileNo" formControlName="mobileNo" placeholder="Enter Mobile Number" required>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field>
+              <input matInput name="profilePic" formControlName="profilePic" placeholder="Enter Profile Pic URL">
+            </mat-form-field>
+          </div>
+          <span>
+            <button mat-raised-button type="submit" [disabled]=myProfileForm.invalid (click)="updateUserProfile()"
+              color="primary">Update</button>
+          </span>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>

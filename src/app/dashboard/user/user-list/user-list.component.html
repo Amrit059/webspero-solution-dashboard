@@ -1,0 +1,32 @@
+<ng-template [ngIf]="userModel.length >0">
+  <div>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Active User</th>
+      </tr>
+      <tr *ngFor="let item of userModel">
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.phoneNo}}</td>
+        <td>{{item.isActive}}</td>
+      </tr>
+    </table>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="userModel.length==0">
+  <div class="container">
+    <button mat-raised-button type="submit" (click)="backButton()"
+    color="primary">Back</button>
+    <div class="row justify-content-md-center">
+      <div style="text-align: center;">
+
+        There is no data list.
+
+      </div>
+    </div>
+  </div>
+</ng-template>
